@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvestmentPortfolioAPI</name>
+    </assembly>
+    <members>
+        <member name="T:InvestmentPortfolioAPI.Controllers.AdministratorController">
+            <summary>
+            Gerencia as operações relacionadas aos administradores.
+            </summary>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.AdministratorController.#ctor(InvestmentPortfolioAPI.Services.AdministratorService)">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:InvestmentPortfolioAPI.Controllers.AdministratorController"/>.
+            </summary>
+            <param name="service">O serviço de administradores a ser usado.</param>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.AdministratorController.GetAll">
+            <summary>
+            Recupera todos os administradores.
+            </summary>
+            <returns>Uma lista de administradores.</returns>
+            <response code="200">Retorna a lista de administradores.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.AdministratorController.GetById(System.Int32)">
+            <summary>
+            Recupera um administrador específico pelo identificador único.
+            </summary>
+            <param name="id">O ID do administrador a ser recuperado.</param>
+            <returns>O administrador, se encontrado.</returns>
+            <response code="200">Retorna o administrador solicitado.</response>
+            <response code="404">Se o administrador não for encontrado.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.AdministratorController.Create(InvestmentPortfolioAPI.Models.Administrator)">
+            <summary>
+            Cria um novo administrador.
+            </summary>
+            <param name="administrator">Os dados do administrador para criação.</param>
+            <returns>Um administrador recém-criado.</returns>
+            <response code="201">Retorna o administrador recém-criado.</response>
+            <example>
+            POST /api/Administrator
+            {
+                "name": "John Doe",
+                "email": "johndoe@example.com"
+            }
+            </example>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.AdministratorController.Update(System.Int32,InvestmentPortfolioAPI.Models.Administrator)">
+            <summary>
+            Atualiza um administrador existente.
+            </summary>
+            <param name="id">O ID do administrador a ser atualizado.</param>
+            <param name="administrator">Os dados atualizados do administrador.</param>
+            <returns>Um ActionResult indicando o resultado da operação.</returns>
+            <response code="204">Se a atualização for bem-sucedida.</response>
+            <response code="400">Se o ID fornecido não corresponder ao ID do administrador.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.AdministratorController.Delete(System.Int32)">
+            <summary>
+            Exclui um administrador específico pelo ID.
+            </summary>
+            <param name="id">O ID do administrador a ser excluído.</param>
+            <returns>Um ActionResult indicando o resultado da operação.</returns>
+            <response code="204">Se a exclusão for bem-sucedida.</response>
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Controllers.CustomerController">
+            <summary>
+            Gerencia as operações relacionadas aos clientes.
+            </summary>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.CustomerController.#ctor(InvestmentPortfolioAPI.Services.CustomerService)">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:InvestmentPortfolioAPI.Controllers.CustomerController"/>.
+            </summary>
+            <param name="service">O serviço de clientes a ser usado.</param>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.CustomerController.GetAll">
+            <summary>
+            Recupera todos os clientes.
+            </summary>
+            <returns>Uma lista de clientes.</returns>
+            <response code="200">Retorna a lista de clientes.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.CustomerController.GetById(System.Int32)">
+            <summary>
+            Recupera um cliente específico pelo identificador único.
+            </summary>
+            <param name="id">O ID do cliente a ser recuperado.</param>
+            <returns>O cliente, se encontrado.</returns>
+            <response code="200">Retorna o cliente solicitado.</response>
+            <response code="404">Se o cliente não for encontrado.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.CustomerController.Create(InvestmentPortfolioAPI.Models.Customer)">
+            <summary>
+            Cria um novo cliente.
+            </summary>
+            <param name="customer">Os dados do cliente para criação.</param>
+            <returns>Um cliente recém-criado.</returns>
+            <response code="201">Retorna o cliente recém-criado.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.CustomerController.Update(System.Int32,InvestmentPortfolioAPI.Models.Customer)">
+            <summary>
+            Atualiza um cliente existente.
+            </summary>
+            <param name="id">O ID do cliente a ser atualizado.</param>
+            <param name="customer">Os dados atualizados do cliente.</param>
+            <returns>Um ActionResult indicando o resultado da operação.</returns>
+            <response code="204">Se a atualização for bem-sucedida.</response>
+            <response code="400">Se o ID fornecido não corresponder ao ID do cliente.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.CustomerController.Delete(System.Int32)">
+            <summary>
+            Exclui um cliente específico pelo ID.
+            </summary>
+            <param name="id">O ID do cliente a ser excluído.</param>
+            <returns>Um ActionResult indicando o resultado da operação.</returns>
+            <response code="204">Se a exclusão for bem-sucedida.</response>
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Controllers.EmailTestController">
+            <summary>
+            Controlador para testar o envio de e-mails e notificar sobre produtos com vencimento próximo.
+            </summary>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.EmailTestController.#ctor(SmtpEmailService,InvestmentPortfolioAPI.Services.InvestmentProductService)">
+            <summary>
+            Construtor para o controlador de teste de e-mail.
+            </summary>
+            <param name="emailService">Serviço de e-mail para envio de mensagens.</param>
+            <param name="productService">Serviço de produtos para notificar sobre produtos expirando.</param>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.EmailTestController.SendTestEmail">
+            <summary>
+            Envia um e-mail de teste.
+            </summary>
+            <returns>Resultado da operação de enviar e-mail.</returns>
+            <response code="200">E-mail enviado com sucesso.</response>
+            <response code="500">Erro ao enviar e-mail.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.EmailTestController.NotifyExpiringProducts">
+            <summary>
+            Notifica sobre produtos com vencimento próximo.
+            </summary>
+            <returns>Resultado da operação de notificação.</returns>
+            <response code="200">Notificações enviadas com sucesso.</response>
+            <response code="500">Erro ao enviar notificações.</response>
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Controllers.InvestmentProductController">
+            <summary>
+            Controlador para gerenciar os produtos de investimento.
+            </summary>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.#ctor(InvestmentPortfolioAPI.Services.InvestmentProductService)">
+            <summary>
+            Construtor para InvestmentProductController.
+            </summary>
+            <param name="service">O serviço de produtos de investimento a ser usado.</param>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.GetAll">
+            <summary>
+            Recupera todos os produtos de investimento.
+            </summary>
+            <returns>Uma lista de produtos de investimento.</returns>
+            <response code="200">Retorna todos os produtos de investimento.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.GetById(System.Int32)">
+            <summary>
+            Recupera um produto de investimento específico pelo seu identificador único.
+            </summary>
+            <param name="id">O ID do produto de investimento a ser recuperado.</param>
+            <returns>O produto de investimento, se encontrado.</returns>
+            <response code="200">Retorna o produto de investimento solicitado.</response>
+            <response code="404">Se o produto de investimento não for encontrado.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.GetProductTransactions(System.Int32)">
+            <summary>
+            Recupera todas as transações de um produto de investimento específico.
+            </summary>
+            <param name="id">O ID do produto para o qual as transações serão recuperadas.</param>
+            <returns>Uma lista de detalhes de transações.</returns>
+            <response code="200">Retorna as transações do produto de investimento.</response>
+            <response code="404">Se não forem encontradas transações para o produto.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.Create(InvestmentPortfolioAPI.Models.InvestmentProduct)">
+            <summary>
+            Cria um novo produto de investimento.
+            </summary>
+            <param name="product">Os dados do produto de investimento para criação.</param>
+            <returns>O produto de investimento criado.</returns>
+            <response code="201">Retorna o produto de investimento recém-criado.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.Update(System.Int32,InvestmentPortfolioAPI.Models.InvestmentProduct)">
+            <summary>
+            Atualiza um produto de investimento existente.
+            </summary>
+            <param name="id">O ID do produto de investimento a ser atualizado.</param>
+            <param name="product">Os dados atualizados do produto de investimento.</param>
+            <returns>Um ActionResult indicando o resultado da operação.</returns>
+            <response code="204">Se a atualização for bem-sucedida.</response>
+            <response code="400">Se o ID fornecido não corresponder ao ID do produto.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.InvestmentProductController.Delete(System.Int32)">
+            <summary>
+            Exclui um produto de investimento específico pelo ID.
+            </summary>
+            <param name="id">O ID do produto de investimento a ser excluído.</param>
+            <returns>Um ActionResult indicando o resultado da operação.</returns>
+            <response code="204">Se a exclusão for bem-sucedida.</response>
+            <response code="404">Se o produto de investimento não for encontrado.</response>
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Controllers.TransactionController">
+            <summary>
+            Controlador para gerenciar transações de compra e venda de produtos de investimento.
+            </summary>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.TransactionController.#ctor(InvestmentPortfolioAPI.Services.TransactionService)">
+            <summary>
+            Inicializa uma nova instância da classe <see cref="T:InvestmentPortfolioAPI.Controllers.TransactionController"/>.
+            </summary>
+            <param name="service">Serviço para processamento de transações.</param>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.TransactionController.Buy(BuyRequest)">
+            <summary>
+            Realiza uma compra de um produto de investimento.
+            </summary>
+            <param name="request">Dados da compra incluindo ID do produto, comprador, vendedor e quantidade.</param>
+            <returns>Confirmação de compra bem-sucedida.</returns>
+            <response code="200">Compra realizada com sucesso.</response>
+            <response code="400">Erro de validação nos dados da compra.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.TransactionController.Sell(SellRequest)">
+            <summary>
+            Realiza uma venda de um produto de investimento.
+            </summary>
+            <param name="request">Dados da venda incluindo ID do produto, comprador, vendedor e quantidade.</param>
+            <returns>Confirmação de venda bem-sucedida.</returns>
+            <response code="200">Venda realizada com sucesso.</response>
+            <response code="400">Erro de validação nos dados da venda.</response>
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Controllers.TransactionController.GetStatement(System.Int32)">
+            <summary>
+            Recupera o extrato de transações de um cliente.
+            </summary>
+            <param name="customerId">ID do cliente para o qual o extrato é solicitado.</param>
+            <returns>Lista de transações do cliente.</returns>
+            <response code="200">Retorna o extrato de transações do cliente.</response>
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.InitialCreateV2">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.InitialCreateV2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.InitialCreateV2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.InitialCreateV2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.UpdatePricePrecision">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.UpdatePricePrecision.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.UpdatePricePrecision.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.UpdatePricePrecision.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.AddAdministrator">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.AddAdministrator.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.AddAdministrator.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.AddAdministrator.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.AddCustomer">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.AddCustomer.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.AddCustomer.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.AddCustomer.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.UpdateTransactionModel">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.UpdateTransactionModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.UpdateTransactionModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.UpdateTransactionModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:InvestmentPortfolioAPI.Migrations.EnsurePriceColumn">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.EnsurePriceColumn.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.EnsurePriceColumn.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:InvestmentPortfolioAPI.Migrations.EnsurePriceColumn.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

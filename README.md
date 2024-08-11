@@ -2,6 +2,8 @@
 
 Este é um sistema de gestão de portfólio de investimentos desenvolvido em C# para uma empresa de consultoria financeira. A aplicação permite que os usuários da operação gerenciem investimentos disponíveis, e os clientes possam comprar, vender e acompanhar seus investimentos.
 
+Link de video-demonstação no youtube: https://youtu.be/7Q8ZG56TlTE
+
 ## Funcionalidades Principais
 
 - **Gestão de Produtos Financeiros**: 
@@ -16,11 +18,9 @@ Este é um sistema de gestão de portfólio de investimentos desenvolvido em C# 
   - A aplicação suporta um grande volume de requisições com um tempo de resposta inferior a 100ms.
 
 ## Requisitos
-
 - .NET 6.0 ou superior
+- Javascript (teste de carga)
 - SQL Server
-- SMTP para envio de e-mails
-- Ferramentas para teste de carga (opcional): K6
 
 ## Configuração
 

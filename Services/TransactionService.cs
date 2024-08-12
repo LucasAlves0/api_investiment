@@ -40,7 +40,7 @@ namespace InvestmentPortfolioAPI.Services
                 SellerId = sellerId,
                 Quantity = quantity,
                 IsPurchase = true,
-                Price = product.Price, // Assuming price is set during purchase
+                Price = product.Price,
                 Date = DateTime.UtcNow
             };
 
@@ -65,7 +65,7 @@ namespace InvestmentPortfolioAPI.Services
                 SellerId = sellerId,
                 Quantity = quantity,
                 IsPurchase = false,
-                Price = product.Price, // Assuming price is set during sale
+                Price = product.Price,
                 Date = DateTime.UtcNow
             };
 

@@ -69,7 +69,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Investment Portfolio API V1");
-        c.RoutePrefix = string.Empty; // Faz o Swagger UI ser carregado na URL raiz
+        c.RoutePrefix = string.Empty; 
     });
 }
 

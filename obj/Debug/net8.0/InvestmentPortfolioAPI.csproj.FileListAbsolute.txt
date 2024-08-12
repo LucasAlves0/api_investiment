@@ -182,3 +182,4 @@ C:\Users\l2000\OneDrive\Documentos\API XP\InvestmentPortfolioManagement\Investme
 C:\Users\l2000\OneDrive\Documentos\API XP\InvestmentPortfolioManagement\InvestmentPortfolioAPI\bin\Debug\net8.0\zh-Hant\FSharp.Core.resources.dll
 C:\Users\l2000\OneDrive\Documentos\API XP\InvestmentPortfolioManagement\InvestmentPortfolioAPI\bin\Debug\net8.0\InvestmentPortfolioAPI.xml
 C:\Users\l2000\OneDrive\Documentos\API XP\InvestmentPortfolioManagement\InvestmentPortfolioAPI\obj\Debug\net8.0\InvestmentPortfolioAPI.xml
+C:\Users\l2000\OneDrive\Documentos\API XP\InvestmentPortfolioManagement\InvestmentPortfolioAPI\obj\Debug\net8.0\InvestmentPortfolioAPI.sourcelink.json

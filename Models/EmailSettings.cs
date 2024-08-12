@@ -7,7 +7,6 @@ public class EmailSettings
     
     public int MailPort { get; set; }
 
-    // Construtor
     public EmailSettings()
     {
         MailServer = string.Empty;

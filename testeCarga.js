@@ -2,7 +2,6 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { Trend } from 'k6/metrics';
 
-// Métricas personalizadas
 let getProductTrend = new Trend('getProductDuration');
 let getStatementTrend = new Trend('getStatementDuration');
 
@@ -27,7 +26,7 @@ export default function () {
   getProductTrend.add(productRes.timings.duration, { tag: 'product' });
 
   // Testar o endpoint de extrato do cliente
-  let statementRes = http.get('http://localhost:5106/api/Transaction/statement/1'); // Use um ID de cliente válido
+  let statementRes = http.get('http://localhost:5106/api/Transaction/statement/1'); 
   check(statementRes, {
     'status é 200': (r) => r.status === 200,
   });

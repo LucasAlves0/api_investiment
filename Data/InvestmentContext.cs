@@ -10,7 +10,7 @@ namespace InvestmentPortfolioAPI.Data
         {
         }
 
-        // Defina DbSets para cada entidade que deseja mapear para o banco de dados
+  
         public DbSet<InvestmentProduct> InvestmentProducts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Administrator> Administrators { get; set; }
@@ -20,12 +20,12 @@ namespace InvestmentPortfolioAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuração adicional do modelo, se necessário
+
             modelBuilder.Entity<InvestmentProduct>()
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
 
-            // Certifique-se de não configurar propriedades inexistentes
+
             modelBuilder.Entity<Transaction>()
                 .Property(t => t.Quantity)
                 .HasPrecision(18, 2);
